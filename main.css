@@ -1,0 +1,357 @@
+
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  border-style: none;
+  background: transparent;
+  outline: none;
+}
+
+button {
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-image: -webkit-radial-gradient(0% 0%, circle, #373b52, #252736 51%, #1d1e26);
+  background-image: radial-gradient(circle at 0% 0%, #373b52, #252736 51%, #1d1e26);
+}
+
+h1.demo {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  color: #f5f6ff;
+}
+
+a.demo {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: rgba(202, 205, 239, 0.8);
+  margin-bottom: 3rem;
+}
+
+.demo-flex-spacer {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 35vh;
+  max-width: 1600px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+.webflow-style-input {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 2px;
+  padding: 1.4rem 2rem 1.6rem;
+  background: rgba(57, 63, 84, 0.8);
+}
+.webflow-style-input:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 999;
+  height: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-position: 0% 0%;
+  background: -webkit-linear-gradient(left, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
+  background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
+  background-size: 500% auto;
+  -webkit-animation: gradient 3s linear infinite;
+          animation: gradient 3s linear infinite;
+}
+
+.webflow-style-input input {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  color: #BFD2FF;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+}
+.webflow-style-input input::-webkit-input-placeholder {
+  color: #7881A1;
+}
+
+.webflow-style-input button {
+  color: #7881A1;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+  -webkit-transition: color .25s;
+  transition: color .25s;
+}
+.webflow-style-input button:hover {
+  color: #BFD2FF;
+  cursor: hand;
+}
+
+
+
+@keyframes show {
+  100% {opacity:1;}
+}
+
+@keyframes hide {
+  100% {opacity:0;}
+}
+
+.body {
+  background: url(http://stash.rachelnabors.com/codepen/spinner/bg_spinner-body.png);
+  left: 50%; margin-left: -62px;
+  width: 224px; height: 332px;  
+}
+
+.message p:nth-child(1) { 
+  animation: 
+    show .5s 1 1ms forwards,
+    hide .5s 1 3s forwards;
+}
+
+.message p:nth-child(2) { 
+  animation: 
+    show .5s 1 4s forwards,
+    hide .5s 1 7s forwards;
+}
+
+.message p:nth-child(3) { 
+  animation: 
+    show .5s 1 9s forwards,
+    hide .5s 1 10s forwards;
+}
+
+.message p:nth-child(4) { 
+  animation: 
+    show .5s 1 11s forwards,
+    hide .5s 1 12s forwards;
+}
+
+.message p:nth-child(5) { 
+  animation: 
+    show .5s 1 12s forwards,
+    hide .5s 1 16s forwards;
+}
+
+.message p:nth-child(6) { 
+  animation: 
+    show .5s 1 17s forwards,
+    hide .5s 1 21s forwards;
+}
+
+.message p:nth-child(7) { 
+  animation: show .5s 1 26s forwards;}
+
+.face {
+  animation: 
+    pfft 1s steps(1) 1 8s,
+    haha .5s steps(2, end) 11s 10,
+    oops 10s steps(1) 16s 1;
+  animation-fill-mode: forwards;
+  background: url(http://stash.rachelnabors.com/codepen/spinner/sprite_spinner-expressions.png);
+  top: 73px; left: 120px;
+  width: 133px; height: 121px;
+}
+
+@keyframes pfft {
+  0% { background-position: 0 0;}
+  100% {background-position: 0 -121px;}
+}
+
+@keyframes haha {
+  0% { background-position: 0 -243px;}
+  100% {background-position: 0 -486px;}
+}
+
+@keyframes oops {
+  0% { background-position: 0 -486px;}
+  100% {background-position: 0 -607px;}
+}
+
+.pupils { 
+  background: url(http://stash.rachelnabors.com/codepen/spinner/bg_spinner-pupils.png);
+  opacity: 0;
+  top: 47px; left: 27px;
+  width: 72px; height: 12px;
+  animation: 
+    show .01s linear 1 16s forwards,
+    uh-oh 5s 1 18s,
+    hide .01s linear 1 26s forwards;
+}
+
+@keyframes uh-oh {
+  0%, 100% {margin-left: 0;}
+  25% {margin-left:7px;}
+  75% {margin-left:-7px;}
+}
+
+.hands {
+  animation: 
+    spin .5s steps(5) infinite;
+  background: url(http://stash.rachelnabors.com/codepen/spinner/sprite_spinner-hands.png);
+  width: 307px; height: 202px;
+}
+
+@keyframes spin {
+  0% {background-position: 0 0;}
+  100% {background-position: 0 -1015px;}
+}
+
+.rachel {  
+  width: 307px; height: 332px;
+  position: absolute;
+  top: 50%; left: 50%;
+  margin-left: -152px;
+  margin-top: -166px;
+}
+
+.rachel .ir { 
+  position: absolute;
+  bottom: 0;
+}
+
+.spinner {
+  background: #e64988;
+  margin-left: -150px; margin-top: -40px;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  width: 300px; height: 300px;
+}
+
+/* Image replacement */
+.ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+}
+.ir br { display: none; }
+
+.message p {
+  animation-fill-mode: forwards;
+  opacity: 0;
+  text-align: center;
+  margin-left: -150px;
+  margin-top: 270px;
+  position: absolute;
+  left: 50%;
+  width: 300px;
+}
+
+html {
+  background: #141f31; 
+  color: #e3edf2;
+}
+
+.list {
+  background: #2c3e50;
+  width: 500px;
+  border-radius: 5px;
+  margin: -40px auto;
+  width: 500px;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  text-align: left;
+  padding: 30px;
+  width: 100%;
+  transition: all .3s ease;
+  color: #FFF;
+  font-size: 18px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+li:hover {
+  background: #2c4e50;
+}
+
+li a {
+  color:#1abc9c;
+}
+
+.linku {
+  font-size: 10px;
+}

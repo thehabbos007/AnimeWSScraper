@@ -1,0 +1,85 @@
+<html>
+<head>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+
+<div class="container">
+  
+  <div class="demo-flex-spacer"></div>
+
+  <div class="webflow-style-input">
+    <input class="" id="val" type="text" placeholder="Input AU link for a show."></input>
+    <button id="go" type="submit"><i class="icon ion-android-arrow-forward"></i></button>
+  </div>
+
+  <div class="demo-flex-spacer"></div>
+</div>
+<div class="list">
+    <div class="result">
+    </div>
+</div>
+
+
+<div class="spinner" style="display:none;">
+    <div class="rachel">
+        <div class="body ir"></div>
+
+        <div class="face ir">
+            <div class="pupils ir"></div>
+        </div>
+
+        <div class="hands ir"></div>
+    </div>
+</div>
+
+<div class="message" style="display:none;">
+    <p>Loading...</p>
+    <p>Still Loading...</p>
+    <p>Okay.</p>
+    <p><strong>AYYYY!</strong></p>
+    <p>NOTHING IS GOING TO HAPPEN?!</p>
+    <p>Eh,wait...</p>
+    <p>Shit.</p>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.5/clipboard.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+var spinner = function(){$(".spinner, .message").toggle()};
+$("#go").click(function() {
+    spinner();
+    $("#go").prop( "disabled", false);
+    $(".result").html("");
+    var link = $("#val");
+
+    $.ajax({
+        type: 'POST',
+        url: "http://localhost:5000/show",
+        data: {"show": link.val()},
+        dataType: "json",
+        success: function(data) { 
+            if (data.list[1] === "Error, link not working") {
+                $(".result").append('<li class="episode">Error, Error occured (wat)</i>');
+            }else{
+                for(i in data.list){
+                    $(".result").append('<li class="episode" data-clipboard-text="' + data.list[i] + '">Episode ' + (i) + ' &#8212;<a class"linku" href="#"> ' + data.list[i] + "</a></i>");
+                    console.log(data.list);
+                }/*
+                for (var i = 0; i <= data.list.length; i++) {
+                    var index = data.list[i]
+                    $(".result").append('<li class="episode" data-clipboard-text="' + index + '">Episode ' + (i) + ' &#8212;<a class"linku" href="#"> ' + index + "</a></i>");
+                };*/
+            }
+            console.log(data);
+            spinner();
+            $( "#go" ).prop( "disabled", false);
+        }
+    });
+});
+new Clipboard('.episode');
+</script>
+</body>
+</html>
